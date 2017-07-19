@@ -15,4 +15,15 @@ class PagesController < ApplicationController
     render :contest
   end
 
+  def kitten
+    requested_size = params[:size]
+    @kitten_url = "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
+    render :kitten
+  end
+
+end
+
+
+def show
+  @picture = Picture.find(params[:id])
 end
